@@ -1,0 +1,23 @@
+.background-page {
+    background-image: url("../images/site/stadium-bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+span{
+    font-weight: bolder;
+}
+
+
+.big-Text{
+    font-size: 25px;
+    color: white;
+    background-color: grey;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.annulatie{
+    font-size: 10px;
+    font-style: italic;
+}

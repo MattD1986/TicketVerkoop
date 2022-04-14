@@ -1,0 +1,44 @@
+﻿
+@model TicketVerkoop.ViewModels.ClubVM
+
+
+<div class="container">
+<div class="text-center text-primary background-page">
+    <h1 class="display-4">VoetbalNation.be</h1>
+
+   
+    <div class = "big-Text" >
+        <p>Een voetbalticket kopen was nooit zo simpel</p>
+    </div>
+    
+    <br/><br/>
+
+
+    <div class="row pb-3 justify-content-evenly">
+        @foreach(var item in Model.clubs)
+        {
+		<div class="col-lg-3 col-md-6">
+			<div class="row p-2">
+				<div class="col-12 p-1" >
+					<div class="card">
+						<img src="~/images/content/logos/@item.Logo" class="card-img-top rounded"/>
+
+						<div class="card-body">
+							<div class="pl-1">
+								<p class="card-title h5 text-primary">@item.Naam</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<a asp-controller="ploegen" asp-action="Index" class="btn btn-primary form-control" asp-route-Id="@item.ClubId">
+							Meer Info
+						</a>
+					</div>
+				</div> 
+			</div>
+		</div>
+	}
+    </div>
+
+</div>
+</div>

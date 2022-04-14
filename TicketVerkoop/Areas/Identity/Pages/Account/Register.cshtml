@@ -1,0 +1,59 @@
+﻿@page
+@model RegisterModel
+
+
+<div class="row pt-4">
+    <div class="col-md-7">
+        <form id="registerForm" class="row" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2>Create a new account.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.Email"></label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Input.Name" class="form-control"  aria-required="true" />
+                <label asp-for="Input.Name"></label>
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="Input.Adres" class="form-control"  aria-required="true" />
+                <label asp-for="Input.Adres"></label>
+                <span asp-validation-for="Input.Adres" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-4">
+                <input asp-for="Input.Postcode" class="form-control"  aria-required="true" />
+                <label asp-for="Input.Postcode"></label>
+                <span asp-validation-for="Input.Postcode" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-8">
+                <input asp-for="Input.Woonplaats" class="form-control"  aria-required="true" />
+                <label asp-for="Input.Woonplaats"></label>
+                <span asp-validation-for="Input.Woonplaats" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-6">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.Password"></label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-6">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.ConfirmPassword"></label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registreer</button>
+        </form>
+    </div>
+
+
+    <div class="col-5 pt-5">
+        <img src="~/images/site/goal.jpg" />
+    </div>
+   
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

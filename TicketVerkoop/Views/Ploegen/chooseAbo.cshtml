@@ -1,0 +1,41 @@
+﻿@model TicketVerkoop.ViewModels.PloegVM
+
+<partial name="_NotificationWithToastr" />
+
+<div class="container">
+<div class="col-10 p-5 mb-3 border border-dark justify-content-center">
+    <div class="col-3">
+        Abonnement
+    </div>
+    <div>
+        <h1>@Model.clubNaam
+    </div>
+
+    <div class="col-10 p-5 row">
+        <form asp-action="ChooseAbo" asp-route-id="@Model.clubId"  method = "post" class="mb-3 col-8 row">
+            <div class="mb-3 col-7">
+                <select asp-for="vakId" asp-items="@Model.vakkenList" class="form-select">
+		        </select>
+            </div>
+
+            <button type= "submit" class = "mb-3 col-3 btn btn-primary"><i class="bi bi-arrow-right-circle"></i> Kies vak </button>
+        </form>
+    </div>
+
+    <div class="col-10 row">
+        <div class="col-8">
+            <img src="~/images/site/stadion_vakken_keuze.jpg" />
+        </div>
+        <div class="pt-5 col-4">
+            <p>1 - doel thuis onderste ring</p>
+            <p>2 - doel thuis bovenste ring</p>
+            <p>3 - doel bezoekers - onderste ring </p>
+            <p>4 - doel bezoekers - bovenste ring</p>
+            <p>5 - zijlijn oost - onderste ring</p>
+            <p>6 - zijlijn oost - bovenste ring</p>
+            <p>7 - zijlijn west - onderste ring</p>
+            <p>8 - zijlijn west - bovenste ring</p>
+        </div>
+    </div>
+</div>
+</div>

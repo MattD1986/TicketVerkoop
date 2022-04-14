@@ -1,0 +1,147 @@
+﻿@model TicketVerkoop.ViewModels.BestellingenVM
+
+<partial name="_NotificationWithToastr" />
+
+<div class="container">
+		<div class="card">
+		@if(Model.abonnementen.Count() == 0 && Model.Tickets.Count() == 0)
+		{
+			<div class="card-header bg-light text-light ml-0">
+				<div class="row">
+					<div class="col-6  pt-2 text-black">
+						<i class="fa fa-shopping-cart"></i> &nbsp;
+						<strong>U kocht nog geen abonnementen of tickets</strong>
+					</div>
+				</div>
+			</div>
+		}
+
+		@if (Model.abonnementen.Count() != 0)
+		{
+			<div class="card-header bg-light text-light ml-0">
+				<div class="row">
+					<div class="col-6  pt-2 text-black">
+						<i class="fa fa-shopping-cart"></i> &nbsp;
+						<strong>Abonnement(en)</strong>
+					</div>
+					<div>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>
+										@Html.DisplayNameFor(model => model.clubNaam)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.vakNaam)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.plaats)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.prijs)
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var abonnement in Model.abonnementen)
+								{
+									<tr>
+										<td>
+											@abonnement.Club.Naam
+										</td>
+										<td>
+											@abonnement.Vak.VakOmschrijving.Beschrijving
+										</td>
+										<td>
+											@abonnement.StoelNr
+										</td>
+										<td>
+											@abonnement.Prijs €
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			}
+		</div>
+		<br/>
+		<div class="card">
+		@if (Model.Tickets.Count() != 0)
+		{
+			<div class="card-header bg-light text-light ml-0">
+				<div class="row">
+					<div class="col-6  pt-2 text-black">
+						<i class="fa fa-shopping-cart"></i> &nbsp;
+						<strong>Tickets</strong>
+					</div>
+					<div>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>
+										@Html.DisplayNameFor(model => model.datum)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.uur)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.thuisPloeg)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.vakNaam)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.plaats)
+									</th>
+									<th>
+										@Html.DisplayNameFor(model => model.prijs)
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var ticket in Model.Tickets)
+								{
+									<tr>
+										<td>
+											@ticket.Wedstrijd.Datum.ToString("dd/MM")
+										</td>
+										<td>
+											@ticket.Wedstrijd.Tijd.ToString(@"hh\:mm")
+										</td>
+										<td>
+											@ticket.Wedstrijd.ThuisPloegNavigation.Naam - @ticket.Wedstrijd.UitPloegNavigation.Naam
+										</td>
+										<td>
+											@ticket.Plaats.Vak.VakOmschrijving.Beschrijving
+										</td>
+										<td>
+											@ticket.Plaats.Stoelnr
+										</td>
+										<td>
+											@ticket.Prijs €
+										</td>
+										@if(DateTime.Today < @ticket.Wedstrijd.Datum){
+										<td>
+											<a asp-action="Annuleer" asp-route-Id="@ticket.Id" class="btn btn-warning">
+															Annuleer Ticket *</a>
+										</td>
+										}
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+			<div class="annulatie">
+				* U kan een ticket tot één week voor de wedstrijd kostenloos annuleren. Nadien worden er 15€ kosten in mindering gebracht bij de terugbetaling.
+			</div>
+			}
+
+			
+		</div>
+</div>

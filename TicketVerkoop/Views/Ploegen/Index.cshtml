@@ -1,0 +1,288 @@
+﻿@model TicketVerkoop.ViewModels.PloegVM
+
+<div class="container">
+@if (@Model.clubId == 1)
+{
+    <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>Club Brugge</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 3 </div>
+                    <div class="mb-2"><span>opgericht:</span> 13 november 1891</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Jan Breydelstadion</div>
+                    <div class="mb-2"><span>voorzitter:</span> Bart Verhaeghe</div>
+                    <div class="mb-2"><span>trainer:</span> Alfred Schreuder</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/FC_Brugge_Team.jpg">
+        </div>
+
+        <div class="col-10 row">
+            <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/brugge_logo.png">
+                </div>
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>Met 17 titels, 11 bekerwinsten en 16 supercups op hun naam is Club Brugge een gevestigde waarde in het Belgische topvoetbal.</p>
+                <p>Tot op vandaag is het ook de enige Belgische ploeg ooit die reeds een Champions League finale speelde (1978, toen nog Europacup I).
+                In latere deelnames konden dan wel geen potten meer gebroken worden, maar Europese topteams komen niet altijd zonder kleerscheuren thuis na een bezoek
+                aan Jan Breydel.</p>
+                <p>Met de jaarlijks terugkomende stadsderby tegen Cercle Brugge en de strijd voor de titel 'ploeg van de stad', de rivaliteit met Anderlecht en andere grote ploegen volgen topmatchen zich in sneltempo op.</p>
+                <p>Wanneer het clublied "You'll never walk alone" van de tribunes rolt, merk je ook onmiddellijk dat de supporters als één man achter het team staan. Een team dat zich volledig geeft, want "No Sweat.. No Glory".</p>
+            </div>
+        </div>
+    </div>
+}
+
+else if (@Model.clubId == 2)
+{
+   <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>KRC Genk</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 322 </div>
+                    <div class="mb-2"><span>opgericht:</span> 1 juli 1988</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Cegeka Arena</div>
+                    <div class="mb-2"><span>voorzitter:</span> Peter Croonen</div>
+                    <div class="mb-2"><span>trainer:</span> Bernd Storck</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/KRC_Genk_Team.jpg">
+        </div>
+
+        <div class="col-10 row">
+             <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/genk_logo.png">
+                </div>
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>De ploeg ontstond uit de fusie van de toen niet onbekende clubs KFC Winterslag en Waterschei. Het duurde echter tot 1996 alvorens de club succesvol begon te worden.
+                   Onder het vakkundige leiderschap van Aimé Anthuenis werd in 1998 reeds een eerste Beker gewonnen.</p>
+                <p>In het korte bestaan van de club zijn intussen reeds 4 landstitels en 3 bekertitels weggezet in de vitrine.</p>
+                <p>De club is gekend voor zijn goed ontwikkelde jeugdwerking en bracht reeds enkele absolute Belgische topspelers voort: Steven Defour, Jelle Vossen en 'not to forget' Kevin De Bruyne.</p>
+                <p>Met bijnamen als "De Smurfen" of "de Mijnjongens" wordt zonder meer zand in de ogen gestrooid bij de tegenstanders, want deze subtopper laat topploegen regelmatig in het zand bijten. </p>
+            </div>
+        </div>
+    </div>
+}
+
+else if (@Model.clubId == 3)
+{
+    <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>KAA Gent</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 7 </div>
+                    <div class="mb-2"><span>opgericht:</span> 31/10/1900</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Ghelamco Arena</div>
+                    <div class="mb-2"><span>voorzitter:</span> Ivan De Witte</div>
+                    <div class="mb-2"><span>trainer:</span> Hein Vanhaezebrouck</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/KAA_Gent_Team.png">
+        </div>
+
+        <div class="col-10 row">
+            <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/gent_logo.png">
+                </div>
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>Begonnen als onderdeel van de gymanstiekfederatie was deze club vanaf dag één een echte volksclub voor iedereen. Aanvankelijk waren de clubkleuren zwart-wit, maar al snel werden deze ingeruild voor het vandaag gekende blauw-wit</p>
+                <p>Pas in 1972 werd de ploeg een echte officiële profclub. Na aankomst in de hoogste klasse in de jaren tachtig beleefde de club onmiddellijk enkel successen, maar net voor het nieuwe decenium zakte de ploeg voor één seizoen terug
+                    naar de tweede klasse.
+                </p>
+                <p>Met de komst van het splinternieuwe stadium in 2013 was een nieuwe periode begonnen voor de topploeg uit Oost-Vlaanderen. In 2015 kwam met de eerste landstitel een absoluut hoogtepunt in de geschiedenis van de club.</p>
+                <p>Europees beleefden de buffalo's intussen ook reeds enkele mooie momenten in één van de mooiste stadiums van België.</p>
+            </div>
+        </div>
+    </div>
+}
+
+else if (@Model.clubId == 4)
+{
+    <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>Royal Antwerp FC</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 1 </div>
+                    <div class="mb-2"><span>opgericht:</span> 1880</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Bosuilstadion</div>
+                    <div class="mb-2"><span>voorzitter:</span> Paul Gheysens</div>
+                    <div class="mb-2"><span>trainer:</span> Brian Priske</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/Royal_Antwerp_FC_Team.jpg">
+        </div>
+
+        <div class="col-10 row">
+            <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/antwerp_logo.png">
+                </div>
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>Gekend als "The Great Old", de oudste voetbalploeg van het land en de eeuwige rivaal van Beerschot.</p>
+                <p>De ploeg kende diverse perioden in zowel de hoogste als de lagere voetbalklassen, maar met een trotse supportersaanhang en een stadion dat steeds afgeladen vol zit, is een thuismatch voor deze ploeg altijd een waar spektakel.</p>
+                <p>Na opnieuw een lange periode in de 2e voetbalklasse, konden "The Great Old" in 2018 opnieuw meespelen bij de beste ploegen van België, en kon het zich net niet plaatsen voor Play-off I.</p>
+                <p>In 2020 stond de ploeg nog fier op het hoogste schavot in de beker van België na een overwinning tegen Club Brugge, 
+                    en ook dit jaar is de ploeg aan een heel sterk seizoen bezig met dank aan sterkhouders als Radja Nainggolan en Ritchie De Laet</p>
+            </div>
+        </div>
+    </div>
+}
+else if (@Model.clubId == 5)
+{
+    <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>Standard Luik</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 16 </div>
+                    <div class="mb-2"><span>opgericht:</span> 1898</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Stade Maurice Dufrasne</div>
+                    <div class="mb-2"><span>voorzitter:</span> Bruno Venanzi</div>
+                    <div class="mb-2"><span>trainer:</span> Luka Elsner</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/Standard_Luik_team.jpg">
+        </div>
+
+        <div class="col-10 row">
+            <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/standard_logo.png">
+                </div>
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>Opgericht als studentenclub werd met een verschil van één stem de naam Standard aangenomen (ten nadele van "Skill"). De inspiratie voor de naam kwam van de legendarische Franse club Standard Athlétic Club uit Parijs.
+                   Met het aannemen van deze naam was ook duidelijk de ambitie gesteld: een echte topclub worden. Na een eerste keer opklimmen naar de eerste afdeling in 1910 volgden enkele magere jaren en degradatie. Maar sinds de promotie in 1921
+                   is de club niet meer afwezig geweest in de hoogste voetbalklasse.</p>
+                <p>Intussen mocht de club reeds 10 keer de kampioenstitel opeisen en ook de beker kwam reeds 8 keer hun kant uit.</p>
+                <p>Het soms letterlijk vurig aanmoedigen van de club door het thuispubliek zorgt ervoor dat iedereen warm loopt om een match van deze ploeg mee te pikken.</p>
+                <p>Ook de vele internationaal gekende namen die bij de ploeg passeerden blijven tot op vandaag tot de verbeelding spreken: Daniel Van Buyten, Marouane Fellaini, Sergio Conceiçao en ga zo maar door.</p>
+            </div>
+        </div>
+    </div>
+}
+else if (@Model.clubId == 6)
+{
+    <div class="p-5 col-10 border row">
+        <div class="mb-3 pt-5 col-6">
+            <div><h1>RSC Anderlecht</h1></div>
+                <div class="p-5">        
+                    <div class="mb-2"><span>stamnummer:</span> 35 </div>
+                    <div class="mb-2"><span>opgericht:</span> 27/05/1908</div>
+                    <hr/>
+                    <div class="mb-2"><span>stadion:</span> Lotto Park</div>
+                    <div class="mb-2"><span>voorzitter:</span> Wouter Vandenhaute</div>
+                    <div class="mb-2"><span>trainer:</span> Vincent Kompany</div>
+                </div>
+        </div>
+        <div class="col-3">
+            <img src="~/images/content/Ploegen/RSC_Anderlecht_Team.jpg">
+        </div>
+
+        <div class="col-10 row">
+            <div class="col-4">
+                <div>
+                    <img src="~/images/content/logos/anderlecht_logo.png">
+                </div>
+
+                <div class="p-4">
+                    @if (DateTime.Now.Date < @Model.competitie.StartDatum)
+                    {
+                        <a asp-action="ChooseAbo" asp-route-Id="@Model.clubId" class="btn btn-secondary p-3">
+							Koop Abonnement!
+                        </a>
+                    }else{
+                        <a class="btn btn-secondary p-3">
+						    Abonnementverkoop beëindigd
+			            </a>
+                    }           
+			   </div>
+            </div>
+            <div class="col-8">
+                <p>34 landstitels, 9 bekers en 13 overwinningen in de supercup. Anderlecht is de meest succesvolle ploeg in het Belgische voetbal. Nochtans duurde het goed 30 jaar alvorens de ploeg zich kon aansluiten bij de andere
+                   (sub)toppers in de Belgische competitie. Maar eens de aansluiting gemaakt, was de ploeg slechts zelden niet terug te vinden in de top 3 van de competitie.</p>
+                <p>De ploeg is ook bekend voor het vele talent dat uitstroomt over Europa. Spontaan denken we aan Enzo Scifo, Vincent Kompany, Anthony Vanden Borre, Romelu Lukaku,...</p>
+                <p>Als één van de beste ploegen in België zijn wedstrijden met andere topclubs als Standard en Club Brugge altijd van spektakel verzekerd. Na een tegenvallend seizoen vorig jaar,
+                    lijkt de club dit jaar opnieuw de aansluiting met de subtop te kunnen maken.
+                </p>
+            </div>
+        </div>
+    </div>
+}
+</div>

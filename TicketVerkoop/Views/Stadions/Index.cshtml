@@ -1,0 +1,32 @@
+﻿@model TicketVerkoop.ViewModels.WedstrijdDataVM
+
+
+<div>
+    @foreach(var stadion in Model.stadions)
+    {
+        <div class="border border-primary p-5 mb-3 col-12 row">
+            <div class="col-6">
+                <h1 class="mb-5">@stadion.Naam</h1>
+                <div class="mb-2">
+                    <div>@stadion.Adres</div>
+                    <div>@stadion.Postcode @stadion.Stad</div>
+                </div>
+                <div> 
+                    <div>
+                        <b>capaciteit: @stadion.Capaciteit</b>
+                    </div>
+                </div>
+                
+                <div class= "pt-5">
+                    <form asp-controller = "Wedstrijden" asp-action="index" method="post">
+                        <button type = "submit" class="btn btn-primary"> Zoek een wedstrijd in dit stadion &nbsp;&nbsp; <i class="bi bi-arrow-right-square"></i></button>
+                        <input type = "hidden" name="stadionID" value="@stadion.Id">
+                    </form>
+                </div>
+            </div>
+            <div class="col-4">   
+                <img src="~/images/content/stadions/(@stadion.Naam)_1.jpg" />
+            </div>
+        </div>
+    }
+</div>
