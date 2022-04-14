@@ -128,7 +128,7 @@ namespace TicketVerkoop.Controllers
                     {
                         Id = wedstrijd.Id,
                         WedstrijdNr = wedstrijd.Id,
-                        wedstrijdDatum = wedstrijd.Datum,
+                        wedstrijdDatum = wedstrijd.Datum, 
                         Aantal = 1,
                         vakNr = 0,
                         Prijs = (float)vak.Prijs,

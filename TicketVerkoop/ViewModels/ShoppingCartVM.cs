@@ -16,7 +16,7 @@ namespace TicketVerkoop.ViewModels
         public int WedstrijdNr { get; set; }
         public int ClubNr { get; set; }
         public int vakNr { get; set; }
-        public DateTime wedstrijdDatum { get; set; }
+        public DateTime wedstrijdDatum { get; set; } 
         [Required]
         public int vakId { get; set; }
         public string NaamThuisPloeg { get; set; }
